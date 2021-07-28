@@ -48,7 +48,20 @@ SSM框架，是Spring + Spring MVC + MyBatis的缩写
 
 # Redis
 
-# Duboo
+Redis是完全开源的，遵守BSD协议的，高性能的key-value数据库。
+
+Redis与其他key-value缓存产品有以下三个特点：
+
+- Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再
+  次加载进行使用。
+- Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，
+  hash等数据结构的存储。
+- Redis支持数据的备份，即master-slave模式的数据备份。
+
+# Dubbo
+
+Apache Dubbo是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：
+面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现
 
 # SpringBoot
 
