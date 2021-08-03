@@ -19,7 +19,8 @@ business层随着不同业务需求每天都在变，或者说他随时会因为
 
 # Service
 
-Service层与Dao层直接相连，向上承接Controller相关业务，向下通过Dao层获取数据
+Service层与Dao层直接相连，向上承接Controller相关业务，向下通过Dao层获取数据。其中Dao和
+Service属于Model
 
 # Dao
 
@@ -48,7 +49,7 @@ DTO(Data Transfer Object,数据传输对象)主要用于远程调用等需要大
 
 # VO
 
-VO（value object）值对象，通常用于业务层之间的数据传递，与PO一样仅包含数据，根据业务的需要与
+VO（value object）值对象，通常用于业务层之间的数据传递，与DO一样仅包含数据，根据业务的需要与
 抽象出的业务对象实现对应或者非对应。
 
 VO主要对应界面显示的数据对象。对于一个WEB页面，或者SWT/SWING的一个界面，用一个VO对象对应整个
@@ -78,6 +79,12 @@ DO可以看成是与数据库中的表相映射的java对象。最简单的DO就
 记录可以用DO的集合。DO中应该不包含任何对数据库的操作。好处就是可以把一条记录作为一个对象处理，
 可以方便的转为其他对象。
 
+这部分概念定义来自myBatis框架对数据库中数据的定义。
+
 # POJO
 
 仅包含属性和getter、setter的类。POJO是PO/DTO/BO/VO的统称，禁止命名成xxxPOJO
+
+# Ref
+
+1、https://zhuanlan.zhihu.com/p/42288383
