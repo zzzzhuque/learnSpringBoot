@@ -44,4 +44,23 @@ public class HelloController {
     public ResponseTransfer postResponseXmlContent(@RequestBody LoginForm loginForm) {
         return new ResponseTransfer("XML Content!");
     }
+
+    // https://www.baeldung.com/spring-requestmapping
+    @RequestMapping(value = "/ex/foos", method = RequestMethod.GET)
+    @ResponseBody
+    public String getFoosBySimplePath() {
+        return "Get some Foos";
+    }
+
+    @RequestMapping(value = "/ex/foos", method = RequestMethod.POST)
+    @ResponseBody
+    public String postFoos() {
+        return "Post some Foos";
+    }
+
+    @RequestMapping(value = "/ex/foos", headers = "key=val", method = RequestMethod.GET)
+    @ResponseBody
+    public String getFoosWithHeader() {
+        return "Get some Foos with Header";
+    }
 }
