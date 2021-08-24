@@ -1,7 +1,11 @@
 package com.zt.boot.controller;
 
+import com.zt.boot.beans.FooFormatter;
+import com.zt.boot.beans.FooService;
 import com.zt.boot.pojo.LoginForm;
 import com.zt.boot.pojo.ResponseTransfer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -62,5 +66,38 @@ public class HelloController {
     @ResponseBody
     public String getFoosWithHeader() {
         return "Get some Foos with Header";
+    }
+
+    // https://blog.csdn.net/woheniccc/article/details/79804600
+    @Value("${server.port}")
+    private String port;
+
+    // ResponseBody返回序列化json数据，若返回String则直接处理为text
+    @RequestMapping(value = "/value", method = RequestMethod.GET)
+    @ResponseBody
+    public String getValuePort() {
+        return port;
+    }
+
+    // ResponseBody返回序列化json数据，若返回String则直接处理为text
+    @RequestMapping(value = "/setAccMonitor")
+    @ResponseBody
+    private String testGetManyParams(Long taskAccumulateNum, Long monitorTimeLength, Long taskSuccessNum,
+                                     Boolean isMonitor, Long businessId) {
+        System.out.println("" + taskAccumulateNum + " " + monitorTimeLength + " " + taskSuccessNum + " " + isMonitor + " " + businessId);
+        return "OK";
+    }
+
+    // 使用fooService不能new，否则这个对象不属于spring容器管理
+    @Autowired
+    private FooService fooService;
+
+    // https://www.baeldung.com/spring-autowire
+    @RequestMapping(value = "/autowired")
+    @ResponseBody
+    private String getAutowired() {
+        System.out.println(fooService.fooFormatter.formatter);
+        FooService.testStatic();
+        return "OK";
     }
 }
