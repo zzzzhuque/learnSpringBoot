@@ -83,7 +83,7 @@ public class HelloController {
     @RequestMapping(value = "/setAccMonitor")
     @ResponseBody
     private String testGetManyParams(Long taskAccumulateNum, Long monitorTimeLength, Long taskSuccessNum,
-                                     Boolean isMonitor, Long businessId) {
+                                     Byte isMonitor, Long businessId) {
         System.out.println("" + taskAccumulateNum + " " + monitorTimeLength + " " + taskSuccessNum + " " + isMonitor + " " + businessId);
         return "OK";
     }
