@@ -50,6 +50,8 @@ public class HelloController {
     }
 
     // https://www.baeldung.com/spring-requestmapping
+    // requestmapping通过在配置类上@Configuration、@EnableWebMvc、@ComponentScan实现配置
+    // 上述这些都在@SpringBootApplication中，简单学习maven之后可以进入Spring boot的学习
     @RequestMapping(value = "/ex/foos", method = RequestMethod.GET)
     @ResponseBody
     public String getFoosBySimplePath() {

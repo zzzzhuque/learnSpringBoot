@@ -10,7 +10,7 @@ Spring解决企业应用开发的复杂性
 
 Spring有两个核心部分：IOC和AOP
 
-- IOC：控制反转，把创建对象过程交给spring进行管理
+- IOC：控制反转，把创建对象过程交给spring进行管理，https://www.zhihu.com/search?q=%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0springboot&utm_content=search_suggestion&type=content
 - AOP：面向切面：不修改源代码进行功能增强
 
 Spring特点
