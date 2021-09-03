@@ -102,4 +102,10 @@ public class HelloController {
         FooService.testStatic();
         return "OK";
     }
+
+    // http://localhost:8080/klasses/123456/teachers?type=web
+    @GetMapping("/klasses/{klassId}/teachers")
+    public String getKlassRelatedTeachers(@PathVariable("klassId") Long klassId, @RequestParam(value = "type", required = false) String type ) {
+        return type;
+    }
 }
