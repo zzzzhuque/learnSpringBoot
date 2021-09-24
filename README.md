@@ -94,3 +94,34 @@ Spring Could并没有重复制造轮子，它只是将目前各家公司开发�
 微服务是可以独立部署、水平扩展、独立访问（或者有独立的数据库）的服务单元，
 Spring Cloud就是这些微服务的大管家，采用了微服务这种架构之后，项目的数量会
 非常多，Spring Cloud需要管理好这些微服务。
+
+# Spring boot特点
+
+## 依赖管理
+
+- 开发导入starter场景启动器
+
+```xml
+<!--依赖管理-->
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.4.RELEASE</version>
+</parent>
+
+<!--父项目，几乎声明了所有常用依赖的版本，但是没有mybatis-->
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-dependencies</artifactId>
+    <version>2.3.4.RELEASE</version>
+</parent>
+
+<!--可以修改版本号-->
+<properties>
+    <mysql.version>5.1.43</mysql.version>
+</properties>
+```
+
+- 无需关注版本号，自动版本仲裁
+
+- 可以修改版本号
