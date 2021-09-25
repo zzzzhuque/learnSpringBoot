@@ -102,6 +102,35 @@ Spring Cloud就是这些微服务的大管家，采用了微服务这种架构�
 - 开发导入starter场景启动器
 
 ```xml
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+</dependencies>
+```
+
+会见到很多类似spring-boot-starter-*的场景启动器，*代表某种场景只要引入starter，
+这个场景所有常规需要的依赖我们都自动引入
+
+在官网查看所有场景：https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters
+
+*-spring-boot-starter是第三方开发的启动器
+
+所有场景启动器最底层的依赖是
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
+    <version>2.3.4.RELEASE</version>
+    <scope>compile</scope>
+</dependency>
+```
+
+- 无需关注版本号，自动版本仲裁
+
+```xml
 <!--依赖管理-->
 <parent>
     <groupId>org.springframework.boot</groupId>
@@ -122,6 +151,7 @@ Spring Cloud就是这些微服务的大管家，采用了微服务这种架构�
 </properties>
 ```
 
-- 无需关注版本号，自动版本仲裁
-
 - 可以修改版本号
+
+## 自动配置
+
