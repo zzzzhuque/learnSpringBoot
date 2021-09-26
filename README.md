@@ -155,3 +155,45 @@ Spring Cloud就是这些微服务的大管家，采用了微服务这种架构�
 
 ## 自动配置
 
+todo
+
+# 单元测试
+
+需要引入依赖
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+</dependency>
+```
+
+Spring Boot 2.2.0版本开始引入JUnit5作为单元测试默认库
+
+JUnit5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
+
+JUnit Jupiter：核心，包含测试引擎，运行在JUnit Platform
+
+JUnit Vintage：兼容JUnit3和JUnit4
+
+```java
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class springBootTest {
+
+  @Autowired
+
+  @Test
+  void test() {
+
+  }
+}
+
+```
+
+常用注解：https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations
+
+比较好用的是参数化测试
