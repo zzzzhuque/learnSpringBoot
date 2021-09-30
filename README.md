@@ -155,7 +155,17 @@ Spring Cloud就是这些微服务的大管家，采用了微服务这种架构�
 
 ## 自动配置
 
-todo
+MainApplication所在的包及其子包自动配置了包扫描，也可以手动配置@SpringBootApplication(scanBasePackages = "com.zt")
+
+@SpringBootApplication(scanBasePackages = "com.zt")
+
+等同于
+
+@SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan
+
+@EnableAutoConfiguration：启用 SpringBoot 的自动配置机制
+
+@ComponentScan： 扫描被@Component、@Service、@Controller、@Repository注解的bean，注解默认会扫描该类所在的包下所有的类
 
 # 单元测试
 
