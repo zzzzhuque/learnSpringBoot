@@ -1,7 +1,9 @@
 package com.zt.boot;
 
+import com.zt.boot.Service.schedule.PreloadContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan
@@ -13,6 +15,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MainApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(MainApplication.class, args);
+        // 预加载
+        PreloadContext preloadContext =  (PreloadContext)context.getBeanFactory().getBean("preloadContext");
+        preloadContext.preload();
     }
 }
